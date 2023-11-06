@@ -13,19 +13,39 @@ GUILD = 'TEST server'
 
 client = discord.Client(intents=discord.Intents.all())
 
+# Kommentar fra Sondre:
+# ======================
+# PS: Her trenger du ikke gjenta ordene, men heller bruke en funksjon som konverterer alt til lowercase (word.lower()),
+# da blir det mindre arbeid :)
+# (Jeg endra koden for å vise)
 
+# GAMMEL, uten lowercase:
+#badWords = [
+#    "fuck", "Fuck", "FUCK",
+#    "shit", "Shit", "SHIT",
+#    "hell", "Hell", "HELL",
+#    "dick", "Dick", "DICK",
+#    "bitch", "Bitch", "BITCH",
+#    "asshole", "Asshole", "ASSHOLE",
+#    "goddamn", "God damn",
+#    "Jesus", "jesus",
+#    "nigger", "Nigger", "NIGGER",
+#]
+
+# NY, med lowercase:
 badWords = [
-    "fuck", "Fuck", "FUCK",
-    "shit", "Shit", "SHIT",
-    "hell", "Hell", "HELL",
-    "dick", "Dick", "DICK",
-    "bitch", "Bitch", "BITCH",
-    "asshole", "Asshole", "ASSHOLE",
-    "goddamn", "God damn",
-    "Jesus", "jesus",
-    "nigger", "Nigger", "NIGGER",
-
+    "fuck",
+    "shit",
+    "hell",
+    "dick",
+    "bitch",
+    "asshole",
+    "goddamn", "god damn",
+    "jesus",
+    "nigger",
 ]
+
+
 theList = [
     "!list",    "!hi",
         "!wow",    "!error",
@@ -46,7 +66,13 @@ async def on_message(message):
         await message.channel.send(theList)
 
 
-    if any(word in message.content for word in badWords):
+    # GAMMEL, uten lowercase:
+    #if any(word in message.content for word in badWords):
+    #    await message.channel.purge(limit=1)
+    #    await message.channel.send("There will be no swearing in my christian minecraft discord server!")
+
+    # NY, med lowercase:
+    if any(word.lower() in message.content for word in badWords):
         await message.channel.purge(limit=1)
         await message.channel.send("There will be no swearing in my christian minecraft discord server!")
 
