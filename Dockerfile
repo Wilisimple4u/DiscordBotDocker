@@ -1,4 +1,5 @@
 FROM python:3.11
+<<<<<<< Updated upstream
 # Forklaring
 # ==================
 # 3.11 er litt mer stabilt enn nyeste versjon av 3.12, 3.12 har gjort mange endringer i
@@ -11,12 +12,18 @@ ENV Token="<TOKEN>"
 # Hent TOKEN fra environment
 # run kommando blir da slik (erstatt <TOKEN> med Discord token):
 # docker run -e Token="<TOKEN>" <IMAGE>
+=======
+
+ENV Token="TOKEN"
+
+>>>>>>> Stashed changes
 
 COPY . .
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+<<<<<<< Updated upstream
 # EXPOSE 6400
 #the same as python's: app.route(host='0.0.0.0'. port=5000)
 # Forklaring
@@ -33,3 +40,10 @@ CMD ["python", "src/Discordbot.py"]
 # ==================
 # Kan kun kjøre en CMD av gangen, her ser jeg utyl kjøres via DiscordBot.py
 # (from utyl import *, dette betyr: bruk utyl.py, trenger altså ikke 'kjøre' denne filen)
+=======
+
+#Takes a copy of the files from src in python
+CMD ["python", "src/DiscordBot.py"]
+# need to use "" for text not ''.
+
+>>>>>>> Stashed changes
