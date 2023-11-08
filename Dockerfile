@@ -6,15 +6,12 @@ FROM python:3.11
 # requirements ikke fungerer uten noen workarounds. Det blir bedre om noen måneder ;)
 
 
-ENV Token="<TOKEN>"
+ENV Token=$Token
 # Forklaring
 # ==================
 # Hent TOKEN fra environment
 # run kommando blir da slik (erstatt <TOKEN> med Discord token):
 # docker run -e Token="<TOKEN>" <IMAGE>
-
-
-ENV Token="TOKEN"
 
 COPY . .
 
