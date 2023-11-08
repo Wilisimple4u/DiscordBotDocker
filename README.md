@@ -1,10 +1,8 @@
 # I did a thing in a place in a time and you want to copy/learn from it.
 
-#
 
 ## The Process
 
-#
 
 ### Discord stuff
 In order to tun the discordbot you need to have made your own discordbot on discord as well as getting the token needed to connect to it.
