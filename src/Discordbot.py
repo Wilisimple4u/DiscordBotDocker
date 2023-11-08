@@ -11,6 +11,7 @@ dotenv.load_dotenv()
 TOKEN = os.getenv('Token')
 GUILD = 'TEST server'
 
+
 client = discord.Client(intents=discord.Intents.all())
 
 # Kommentar fra Sondre:

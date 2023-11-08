@@ -28,6 +28,7 @@ RUN pip install -r requirements.txt
 # Du kjører ikke noe som bruker en port, så du trenger ikke å expose en port.
 # Her er det kun et program som kjører, ikke en nettside eller noe som trenger en port :)
 
+
 # Kjør Discordbot (skriveleif, stor B :))
 # CMD ["python", "src/DiscordBot.py"]
 CMD ["python", "src/Discordbot.py"]
