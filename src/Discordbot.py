@@ -52,7 +52,7 @@ theList = [
         "!wow",    "!error",
         "!great success",
         "!thanks",  "!intro",
-        "!greet",   "!clear",
+        "!greet",   "!clear x",
         "!test",    "!clear last",
 ]
 
@@ -80,9 +80,9 @@ async def on_message(message):
     if message.content == "!clear last":
         await message.channel.purge(limit=2)
 
-    if message.content == "!clear":
+    if message.content.startswith() == "!clear":
         await message.channel.send("set a limit (number):")
-        clearNumber = int(input("number: "))
+        clearNumber = 2 #TODO make it possible to enter a number you want to clear. This will happen using the split command. split(' ') split when it finds a space in clear.
         await message.channel.purge(limit=clearNumber)
         await message.channel.send("deleted " + str(clearNumber) + " messages")
         #clearNumber = int(input("enter a number: "))
