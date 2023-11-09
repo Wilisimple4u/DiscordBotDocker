@@ -66,12 +66,6 @@ async def on_message(message):
         await message.channel.send("Here is a list of commands:")
         await message.channel.send(theList)
 
-
-    # GAMMEL, uten lowercase:
-    #if any(word in message.content for word in badWords):
-    #    await message.channel.purge(limit=1)
-    #    await message.channel.send("There will be no swearing in my christian minecraft discord server!")
-
     # NY, med lowercase:
     if any(word.lower() in message.content for word in badWords):
         await message.channel.purge(limit=1)
@@ -80,14 +74,17 @@ async def on_message(message):
     if message.content == "!clear last":
         await message.channel.purge(limit=2)
 
-    if message.content.startswith() == "!clear":
-        await message.channel.send("set a limit (number):")
-        clearNumber = 2 #TODO make it possible to enter a number you want to clear. This will happen using the split command. split(' ') split when it finds a space in clear.
+    if message.content.startswith('!clear'):
+        clearValue = message.content.split(' ')
+    if len(clearValue) == 2 and clearValue[1].isdigit():
+        clearNumber = int(clearValue[1])
+    else:
+        return
+    if clearNumber <= 30:
         await message.channel.purge(limit=clearNumber)
         await message.channel.send("deleted " + str(clearNumber) + " messages")
-        #clearNumber = int(input("enter a number: "))
-        #print(clearNumber)
-
+    else:
+        await message.channel.send("clear number too high or other unexpected error")
 
 
     if message.content == "!test":
