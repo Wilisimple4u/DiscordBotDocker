@@ -65,26 +65,30 @@ async def on_message(message):
     if message.content == "!list":
         await message.channel.send("Here is a list of commands:")
         await message.channel.send(theList)
+        return
 
     # NY, med lowercase:
     if any(word.lower() in message.content for word in badWords):
         await message.channel.purge(limit=1)
         await message.channel.send("There will be no swearing in my christian minecraft discord server!")
+        return
 
     if message.content == "!clear last":
         await message.channel.purge(limit=2)
+        return
 
     if message.content.startswith('!clear'):
         clearValue = message.content.split(' ')
-    if len(clearValue) == 2 and clearValue[1].isdigit():
-        clearNumber = int(clearValue[1])
-    else:
+        if len(clearValue) == 2 and clearValue[1].isdigit():
+            clearNumber = int(clearValue[1])
+        else:
+            return
+        if clearNumber <= 30:
+            await message.channel.purge(limit=clearNumber)
+            await message.channel.send("deleted " + str(clearNumber) + " messages")
+        else:
+            await message.channel.send("clear number too high or other unexpected error")
         return
-    if clearNumber <= 30:
-        await message.channel.purge(limit=clearNumber)
-        await message.channel.send("deleted " + str(clearNumber) + " messages")
-    else:
-        await message.channel.send("clear number too high or other unexpected error")
 
 
     if message.content == "!test":
@@ -105,24 +109,31 @@ async def on_message(message):
 
     if message.content == "!hi":
         await message.channel.send("wow")
+        return
 
     if message.content == "!thanks":
         await message.channel.send("You are welcome hope to be of service later")
+        return
 
     if message.content == "!greet":
         await message.channel.send("Hi, I am Jordi, I can be helpful sometimes.")
+        return
 
     if message.content == "!intro":
         await message.channel.send("Hi my name is Jordi, I will help with whatever is in my ability")
+        return
 
     if message.content == "!wow":
         await message.channel.send("error")
+        return
 
     if message.content == "!error":
         await message.channel.send("hi")
+        return
 
     if message.content == "!great success":
         await message.channel.send("Put up the streamers, blow up the ballons, we have to celebrate this.")
+        return
 
 
 
