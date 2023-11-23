@@ -5,7 +5,7 @@
 
 
 ### Discord stuff
-In order to tun the discordbot you need to have made your own discordbot on discord as well as getting the token needed to connect to it.
+In order to run the discordbot you need to have made your own discordbot on discord as well as getting the token needed to connect to it.
 
 #
 
@@ -18,7 +18,7 @@ Remember to change the <TOKEN> in the run.bat file to the discord token you are 
 
 ### Docker stuff
 
-To make it easier on myself and other people that struggle with the terminal like me I have added bashfiles that can run the docker commends for you.
+To make it easier on myself and other people that struggle with the terminal like me I have added bashfiles that can run the docker commends for you into python.
 
 #
 
