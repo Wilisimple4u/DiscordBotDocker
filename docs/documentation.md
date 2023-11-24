@@ -84,15 +84,15 @@ Restart the vsftpd service:
 (sudo service vsftpd restart)
 or
 (sudo systemctl restart vsftpd.service)
-Not both as it is redundant.
+Not both, it would be redundant.
 
 
 gets the project and adds it as a file:
-git clone (Link to project)
+(git clone (Link to project))
 
 
 Enter the file
-cd "FileName"
+(cd "FileName")
 
 
 (sudo apt install openssh-server)
@@ -113,11 +113,32 @@ Build the docker container:
 (sudo docker build -t discord .)
 
 
+For the DiscordBotDocker to run spesifically it will need the token,
+(sudo docker run -e Token=TOKEN)
+
+
+
+Setting up a docker composer file to do all the docker process for me
+Hint: way simpler.
+Editing the docker-compose.yml
+(nano NAME.yml)
+
+
+Good idea to make a directory for the dockercompose file
+(mkdir NAME)
+
+
 If I inevitably make mistakes,
 I can use this to remove the docker file and try again:
-rm -rd
-
-
-
+(rm -rd Filename)
 ```
 
+My Docker-composer file should look like this.
+```markdown
+services:
+  discordbot:
+    build:
+    restart: unless-stopped (good enough for this current project)
+    environment:
+      - Token=TOKEN
+```
