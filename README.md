@@ -18,7 +18,7 @@ Remember to change the "TOKEN" in the run.bat file to the discord token you are 
 
 ### Docker stuff
 
-To make it easier on myself and other people that struggle with the terminal like me I have added bashfiles that can run the docker commends for you into python.
+To make it easier on myself and other people that struggle with the terminal, I have added bashfiles that can run the docker commands for you into python.
 
 #
 
