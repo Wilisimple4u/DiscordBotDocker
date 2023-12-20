@@ -12,7 +12,7 @@ In order to run the discordbot you need to have made your own discordbot on disc
 ### Python stuff
 
 By Importing my code into Pycharm or whatever else can run this beautiful mess of a code, you should then be able to both run it through pycharm as well as docker container.
-Remember to change the "<TOKEN>" in the run.bat file to the discord token you are going to be using.
+Remember to change the "TOKEN" in the run.bat file to the discord token you are going to be using.
 
 #
 
