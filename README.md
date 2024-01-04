@@ -35,5 +35,5 @@ Copythis into the terminal with the file selected -->  .\run.bat
 
 #
 #
-### For developer aka me:
-# Don't forget to make it public and let people see the deployed page from pages.
+## For developer aka me:
+### Don't forget to make it public and let people see the deployed page from pages.
