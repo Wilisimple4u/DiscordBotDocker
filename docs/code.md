@@ -4,7 +4,7 @@ Velkommen til min **dokumentasjon.**
 
 Imports:
 Note: Not all imports will be used but in my current code. 
-However they can be used to build upon it further.
+However they can be used to build upon it further. lol
 ```python
 
 ```
