@@ -1,5 +1,6 @@
 # I did a thing in a place in a time and you want to copy/learn from it.
 
+This project uses Python and was originally made in Pycharm.
 
 ## The Process
 
